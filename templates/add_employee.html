@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block title %}Add Employee{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+            <h3>Add Employee</h3>
+        </div>
+
+        <div class="card-body">
+
+            <form method="POST">
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Full Name</label>
+
+                        <input
+                            type="text"
+                            name="name"
+                            class="form-control"
+                            required>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">Email</label>
+
+                        <input
+                            type="email"
+                            name="email"
+                            class="form-control"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">Phone</label>
+
+                        <input
+                            type="text"
+                            name="phone"
+                            class="form-control"
+                            required>
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">Department</label>
+
+                        <select
+                            name="department"
+                            class="form-select"
+                            required>
+
+                            <option value="">Select Department</option>
+                            <option>IT</option>
+                            <option>HR</option>
+                            <option>Finance</option>
+                            <option>Sales</option>
+                            <option>Marketing</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">Designation</label>
+
+                        <input
+                            type="text"
+                            name="designation"
+                            class="form-control"
+                            required>
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">Salary</label>
+
+                        <input
+                            type="number"
+                            name="salary"
+                            class="form-control"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">Joining Date</label>
+
+                    <input
+                        type="date"
+                        name="joining_date"
+                        class="form-control"
+                        required>
+
+                </div>
+
+                <button class="btn btn-success">
+                    Save Employee
+                </button>
+
+                <a href="/" class="btn btn-secondary">
+                    Back
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
