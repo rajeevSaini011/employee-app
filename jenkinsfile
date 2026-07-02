@@ -4,7 +4,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = "rajeev011/employee-app"
-        IMAGE_TAG = "latest"
+        IMAGE_TAG  = "latest"
     }
 
     stages {
@@ -17,11 +17,11 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .'
+                sh 'docker build -f dockerfile -t ${IMAGE_NAME}:${IMAGE_TAG} .'
             }
         }
 
-        stage('Verify Image') {
+        stage('Verify Docker Image') {
             steps {
                 sh 'docker images'
             }
@@ -52,12 +52,18 @@ pipeline {
     }
 
     post {
+
         success {
-            echo 'Docker image pushed successfully!'
+            echo '======================================'
+            echo ' Docker Image Pushed Successfully '
+            echo '======================================'
         }
 
         failure {
-            echo 'Pipeline failed. Check console output.'
+            echo '======================================'
+            echo ' Pipeline Failed '
+            echo ' Check Console Output '
+            echo '======================================'
         }
 
         always {
